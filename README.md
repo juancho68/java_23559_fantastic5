@@ -1,4 +1,4 @@
-# tp_javascript
-##TP Javascript Grupal
+# tp_grupal_javascript
+## TP Javascript Grupal
 
 
