@@ -1,4 +1,10 @@
-# tp_grupal_javascript
-## TP Javascript Grupal
+# TP Javascript Grupo: Fantasic5
+
+## Celli, María Fernanda
+## Figueroa, Juan Pablo 
+## Toro, Mario
+## Mordeglia, Santiago
+## Scardino, Juan Luis
+
 
 
