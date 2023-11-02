@@ -20,31 +20,100 @@ btnBorrar.addEventListener("click", () => {
 });
 
 function calcularTotalaPagar(descuento,cantidad){
-    return (valorEntrada*descuento*cantidad);
+
+    var total =  valorEntrada - (valorEntrada * cantidad * descuento);
+    return total;
+    // return (valorEntrada*descuento*cantidad);
 }
 
 btnResumen.addEventListener("click",()=>{
        
     let totalPago;
 
+    //Valida que los campos no esten vacios
+    if(nombre.value.trim() === '' && apellido.value.trim() === '' && correo.value.trim() === '' && cantidad.value.trim() === '') {
+        
+            var html = `
+            <div id="prueba" class="alert alert-danger bg-danger text-white p-2" role="alert">
+                <i class="bi bi-exclamation-triangle pe-2"></i>Los campos no pueden estar vacios
+            </div>
+            `;
 
-        switch (categoria.value){
+            document.querySelector("#alerta").innerHTML = html;
+            setTimeout(() => {
+                var divEliminar = document.querySelector("#prueba");
+                divEliminar.parentNode.removeChild(divEliminar);
+            }, 1500);
+
+    }   else if( cantidad.value < 1 || cantidad.value > 5) {        
+            var html = `
+                <div id="prueba" class="alert alert-danger bg-danger text-white p-2" role="alert">
+                    <i class="bi bi-exclamation-triangle pe-2"></i>Elija entre 1 y 5 tickets
+                </div>
+                `;
+
+            document.querySelector("#alerta").innerHTML = html;
+            setTimeout(() => {
+                var divEliminar = document.querySelector("#prueba");
+                divEliminar.parentNode.removeChild(divEliminar);
+            }, 1500);  
+        }
+        else if( nombre.value.trim() === '') {        
+            var html = `
+                <div id="prueba" class="alert alert-danger bg-danger text-white p-2" role="alert">
+                    <i class="bi bi-exclamation-triangle pe-2"></i>El nombre no puede estar vacio
+                </div>
+                `;
+
+            document.querySelector("#alerta").innerHTML = html;
+            setTimeout(() => {
+                var divEliminar = document.querySelector("#prueba");
+                divEliminar.parentNode.removeChild(divEliminar);
+            }, 1500);  
+        }
+        else if( apellido.value.trim() === '') {        
+            var html = `
+                <div id="prueba" class="alert alert-danger bg-danger text-white p-2" role="alert">
+                    <i class="bi bi-exclamation-triangle pe-2"></i>El apellido no puede estar vacio
+                </div>
+                `;
+
+            document.querySelector("#alerta").innerHTML = html;
+            setTimeout(() => {
+                var divEliminar = document.querySelector("#prueba");
+                divEliminar.parentNode.removeChild(divEliminar);
+            }, 1500);
+        }
+        else if( correo.value.trim() === '') {        
+            var html = `
+                <div id="prueba" class="alert alert-danger bg-danger text-white p-2" role="alert">
+                    <i class="bi bi-exclamation-triangle pe-2"></i>El correo no puede estar vacio
+                </div>
+                `;
+
+            document.querySelector("#alerta").innerHTML = html;
+            setTimeout(() => {
+                var divEliminar = document.querySelector("#prueba");
+                divEliminar.parentNode.removeChild(divEliminar);
+            }, 1500);   
+        } 
+    else {
+        switch (categoria.value) {
             case "1": //Estudiante
-                totalPago=calcularTotalaPagar(0.20,parseInt(cantidad.value));
+                totalPago=calcularTotalaPagar(0.80,parseInt(cantidad.value));
                 break;
             case "2":  //Trainee
                 totalPago=calcularTotalaPagar(0.50,parseInt(cantidad.value));
                 break;
             case "3":  //Junior
-                totalPago=calcularTotalaPagar(0.85,parseInt(cantidad.value));
+                totalPago=calcularTotalaPagar(0.15,parseInt(cantidad.value));
                 break;
             default:
                 totalPago=calcularTotalaPagar(1,parseInt(cantidad.value));
                 break;
-
         }
-
-    parrafo.innerHTML="Total a pagar: $" + totalPago;
-    Event.preventDefault(); 
+        parrafo.innerHTML="Total a pagar: $" + totalPago;
+    }
+     Event.preventDefault(); 
 })
 
