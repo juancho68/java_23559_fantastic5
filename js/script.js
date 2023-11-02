@@ -32,8 +32,7 @@ btnResumen.addEventListener("click",()=>{
 
     //Valida que los campos no esten vacios
     if(nombre.value.trim() === '' && apellido.value.trim() === '' && correo.value.trim() === '' && cantidad.value.trim() === '') {
-
-            //Creo una alerta con js si los campos estan vacios
+        
             var html = `
             <div id="prueba" class="alert alert-danger bg-danger text-white p-2" role="alert">
                 <i class="bi bi-exclamation-triangle pe-2"></i>Los campos no pueden estar vacios
@@ -41,7 +40,6 @@ btnResumen.addEventListener("click",()=>{
             `;
 
             document.querySelector("#alerta").innerHTML = html;
-            //Le doy 1,5seg a la alerta para que se muestre en pantalla, luego desaparece
             setTimeout(() => {
                 var divEliminar = document.querySelector("#prueba");
                 divEliminar.parentNode.removeChild(divEliminar);
