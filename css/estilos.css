@@ -11,3 +11,16 @@
 .bg-info{
     padding: 10px ;
 }
+.card-title text-center{
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: transform 0.3s;
+}
+.card:hover {
+   transform: scale(1.1);
+    background-color: #8cb0aa;
+    color: #fff;
+    
+}
