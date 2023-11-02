@@ -21,7 +21,8 @@ btnBorrar.addEventListener("click", () => {
 
 function calcularTotalaPagar(descuento,cantidad){
 
-    var total =  valorEntrada - (valorEntrada * cantidad * descuento);
+    var valorPorCantidad = valorEntrada * cantidad;
+    var total = valorPorCantidad - (valorPorCantidad * descuento);
     return total;
     // return (valorEntrada*descuento*cantidad);
 }
