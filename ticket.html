@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/estilos.css">
+  <script src="./js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <title>Javascript - Fantastic5</title>
+</head>
+
+<body>
+  <div>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./jpg/codoacodo.png" alt="Bootstrap" width="30" height="24" class="d-inline-block align-text-top">
+          <span>Conf Buenos Aires</span>
+        </a>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link fs-4" href="index.html">La conferencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="index.html">Los oradores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="index.html">El lugar y la fecha</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="index.html">Conviértete en orador</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4 text-warning" href="/">Comprar tickets</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <section class="compratickets section-padding">
+    <div class="container-fluid ">
+      <div class="row ">
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="card border-primary border border-3">
+            <h1 class="card-title text-center">Estudiantes</h1>
+            <span class="card-body text-center">Tienen un descuento</span>
+            <h1 class="fw-bold text-center">80%</h1>
+            <span class="text-center">*presentar documentación</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="card border-secondary border border-3">
+            <h1 class="card-title text-center">Trainee</h1>
+            <span class="card-body text-center">Tienen un descuento</span>
+            <h1 class="fw-bold text-center">50%</h1>
+            <span class="text-center">*presentar documentación</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="card border-warning border border-3">
+            <h1 class="card-title text-center">Junior</h1>
+            <span class="card-body text-center">Tienen un descuento</span>
+            <h1 class="fw-bold text-center">15%</h1>
+            <span class="text-center">*presentar documentación</span>
+          </div>
+        </div>
+      </div>
+      <h1 class="text-center">venta</h1>
+      <h1 class="text-center">valor de ticket $200</h1>
+    </div>
+    <div class="container-fluid">
+      <form action="#" class="row g-3 frmCompra">
+        <div class="col-md-6">
+          <label for="inputNombre" class="form-label"></label>
+          <input type="text" class="form-control" id="inputNombre" placeholder="nombre">
+        </div>
+        <div class="col-md-6">
+          <label for="inputApellido" class="form-label"></label>
+          <input type="text" class="form-control" id="inputApellido" placeholder="apellido">
+        </div>
+        <div class="col-12">
+          <label for="inputCorreo" class="form-label"></label>
+          <input type="email" class="form-control" id="inputCorreo" placeholder="correo">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCantidad" class="form-label">Cantidad</label>
+          <input type="number" class="form-control" id="inputCantidad" placeholder="Cantidad">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCategoria" class="form-label">Categoria</label>
+          <select id="inputCategoria" class="form-select">
+            <option value="1">Estudiante</option>
+            <option value="2">Trainee</option>
+            <option value="3">Junior</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+            <div id="alerta"></div>
+          <!-- <label for="totalAPagar" class="form-control bg-info" id="totalAPagar">Total a pagar: $</label> -->
+          <p class="bg-info " id="totalAPagar">Total a pagar: $</p>
+        </div>
+        <div class="container">
+          <div class="row justify-content-between">
+            <button type="button" value="Reset" onclick="Reset();" class="btn btn-warning m-10 p-10 col-6"
+              id="btnBorrar">Borrar</button>
+            <button type="button" class="btn btn-success m-10 p-10 col-6"
+              id="btnResumen">Resumen</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-dark p-3 text-center">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-6 col-lg-1 d-flex justify-content-center">
+          <p class="text-white align-self-center">Preguntas Frecuentes</p>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-1 d-flex justify-content-center">
+          <p class="text-white align-self-center">Contactanos</p>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-1 d-flex justify-content-center">
+          <p class="text-white align-self-center">Prensa</p>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-1 d-flex justify-content-center">
+          <p class="text-white align-self-center">Conferencias</p>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-1 d-flex justify-content-center">
+          <p class="text-white align-self-center">Terminos y condiciones</p>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-1 d-flex justify-content-center">
+          <p class="text-white align-self-center">Privacidad</p>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-1 d-flex justify-content-center">
+          <p class="text-white align-self-center">Estudiantes</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+  <script type="text/javascript">
+    function Reset() {
+        var dropDown = document.getElementById("inputCategoria");
+        dropDown.selectedIndex = 0;
+    }
+  </script>
+
+</body>
+
+</html>
